@@ -1,0 +1,13 @@
+package com.wonjuninfo.projectbord;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ProjectBordApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ProjectBordApplication.class, args);
+	}
+
+}
