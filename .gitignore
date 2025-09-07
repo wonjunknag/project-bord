@@ -53,6 +53,9 @@ cmake-build-*/
 # File-based project format
 *.iws
 
+#Querydsl
+/src/main/generated
+
 # IntelliJ
 out/
 
