@@ -29,7 +29,7 @@ public class UserAccount extends AuditingFields {
     @Setter private String memo;
 
 
-    protected UserAccount(String kk, String ddd, String s, String string, String meno, LocalDateTime now, LocalDateTime nowed) {}
+    protected UserAccount() {}
 
     private UserAccount(String userId, String userPassword, String email, String nickname, String memo, String createdBy) {
         this.userId = userId;
