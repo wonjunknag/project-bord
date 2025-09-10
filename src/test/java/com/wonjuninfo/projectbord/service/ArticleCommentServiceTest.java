@@ -2,9 +2,11 @@ package com.wonjuninfo.projectbord.service;
 
 import com.wonjuninfo.projectbord.domain.Article;
 import com.wonjuninfo.projectbord.domain.ArticleComment;
+import com.wonjuninfo.projectbord.domain.UserAccount;
 import com.wonjuninfo.projectbord.dto.ArticleCommentDto;
 import com.wonjuninfo.projectbord.repository.ArticleCommentRepository;
 import com.wonjuninfo.projectbord.repository.ArticleRepository;
+import com.wonjuninfo.projectbord.repository.UserAccountRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,14 +29,17 @@ class ArticleCommentServiceTest {
 
     @Mock private ArticleCommentRepository articleCommentRepository;
     @Mock private ArticleRepository articleRepository;
+    @Mock private UserAccountRepository userAccountRepository;
+
 
     @DisplayName("게시글 ID로 조회하면, 해당하는 댓글 리스트를 반환한다.")
     @Test
     void givenArticleId_whenSearchingArticleComments_thenReturnsArticleComments() {
         // Given
         Long articleId = 1L;
+        UserAccount userAccount = UserAccount.of("dd", "dd", "dd", "dd", "dd");
         given(articleRepository.findById(articleId)).willReturn(Optional.of(
-                Article.of("title", "content", "#java"))
+                Article.of(userAccount ,"title", "content", "#java"))
         );
 
         // When
